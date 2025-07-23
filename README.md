@@ -85,7 +85,62 @@ cd Agentic-RAG-Chatbot
 python -m venv .venv
 # Windows
 .venv\Scripts\activate
+
+
+(or)
+here u must required to create the .enc file so instead of doing cloneing goto dowload the .zip file and try it
+
+(or)
 ```
+📄 Step 1: Create the .env file
+In Git Bash (inside your project folder):
+
+touch .env
+
+(This creates a new empty file named .env)
+
+📝 Step 2: Open .env file using nano editor
+
+nano .env
+
+✍️ Step 3: Add the API keys inside the file
+Type or paste the following lines (replace with your actual keys):
+
+env
+Copy
+Edit
+HF_TOKEN=your_huggingface_token
+GROQ_API_KEY=your_groq_api_key
+✅ Example:
+
+env
+
+HF_TOKEN=hf_abc123xyz456  #put ur api or api in the .env mine there 3 api put here if u use the gitbash
+GROQ_API_KEY=gsk_example789
+
+💾 Step 4: Save the file in nano
+Now press these keys in order:
+
+🔹 Ctrl + X → this will prompt to save
+🔹 Press Y → to confirm saving
+🔹 Press Enter → to save with the name .env
+
+✅ Now .env file is saved successfully with your tokens.
+
+🔍 Step 5: Verify the .env file (Optional)
+To check the contents, run:
+
+bash
+
+cat .env
+
+You should see:
+
+
+HF_TOKEN=hf_abc123xyz456
+GROQ_API_KEY=gsk_example789
+
+
 
 3. **Install the libraries**
 ```bash
