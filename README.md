@@ -47,131 +47,126 @@ This is a complete **Retrieval-Augmented Generation (RAG)** based chatbot built 
 
 ---
 
-## 📁 Project Directory
+# 🤖 Agentic RAG Chatbot with MCP
 
-```bash
-Agentic-RAG-Chatbot/
-├── app.py                    # Streamlit frontend
-├── agents/
-│   ├── ingestion_agent.py    # Handles parsing documents
-│   ├── retrieval_agent.py    # Manages embedding & FAISS
-│   ├── llm_response_agent.py # Calls LLM and returns answers
-│   └── mcp.py                # Message-passing protocol
-├── temp/  
-    VIDEO                   # Stores temporary uploads
-├── requirements.txt          # Required Python libraries
-└── README.md                 # Project overview (this file)
-```
+This is a modular Retrieval-Augmented Generation (RAG) chatbot with ingestion, retrieval, and LLM response agents integrated using MCP messaging.
 
 ---
 
-## 🚀 How to Set Up and Run
+## 📦 Installation Steps
 
-### 📌 Requirements
-
-- Python 3.9 or above
-- HuggingFace account (if embeddings need a token)
-
-### ⚙️ Installation Steps
-
-1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/Agentic-RAG-Chatbot.git
+# 1. Clone the repository
+git clone https://github.com/Srinu-2003/Agentic-RAG-Chatbot.git
 cd Agentic-RAG-Chatbot
-```
 
-2. **Set up virtual environment**
-```bash
+# 2. Create a virtual environment
 python -m venv .venv
-# Windows
+
+# 3. Activate the virtual environment
+# For Windows
 .venv\Scripts\activate
+# For Linux/Mac
+source .venv/bin/activate
 
-
-(or)
-here u must required to create the .enc file so instead of doing cloneing goto dowload the .zip file and try it
-
-(or)
-```
-📄 Step 1: Create the .env file
-In Git Bash (inside your project folder):
-
-touch .env
-
-(This creates a new empty file named .env)
-
-📝 Step 2: Open .env file using nano editor
-
-nano .env
-
-✍️ Step 3: Add the API keys inside the file
-Type or paste the following lines (replace with your actual keys):
-
-env
-Copy
-Edit
-HF_TOKEN=your_huggingface_token
-GROQ_API_KEY=your_groq_api_key
-✅ Example:
-
-env
-
-HF_TOKEN=hf_abc123xyz456  #put ur api or api in the .env mine there 3 api put here if u use the gitbash
-GROQ_API_KEY=gsk_example789
-
-💾 Step 4: Save the file in nano
-Now press these keys in order:
-
-🔹 Ctrl + X → this will prompt to save
-🔹 Press Y → to confirm saving
-🔹 Press Enter → to save with the name .env
-
-✅ Now .env file is saved successfully with your tokens.
-
-🔍 Step 5: Verify the .env file (Optional)
-To check the contents, run:
-
-bash
-
-cat .env
-
-You should see:
-
-
-HF_TOKEN=hf_abc123xyz456
-GROQ_API_KEY=gsk_example789
-
-
-
-3. **Install the libraries**
-```bash
+# 4. Install the required dependencies
 pip install -r requirements.txt
-```
 
-4. *(Optional)* Install PyTorch (if not already present)
+# 5. Create a `.env` file in the root folder and add your API keys
+touch .env
+```
+## 🔐 API Key Setup Guide (.env File)
+
+Follow these steps to configure your API keys safely using a `.env` file.
+
+### 📁 Step 1: Create the `.env` File
+
 ```bash
-pip install torch
+touch .env
 ```
 
----
+### 📝 Step 2: Open the `.env` File with Nano Editor
 
-### 🔐 Environment Variables
+```bash
+nano .env
+```
 
-If required, create a `.env` file:
+### 🔑 Step 3: Add the Following API Keys to the File
+
 ```env
-HF_TOKEN=your_huggingface_token
+HF_TOKEN=hf_ # put ur
+GROQ_API_KEY= # put ur
+OPENAI_API_KEY= #pur ur
 ```
+
+### 💾 Step 4: Save and Exit Nano Editor
+
+- Press `Ctrl + X` to exit.
+- Press `Y` to confirm saving.
+- Press `Enter` to save the file.
 
 ---
 
-## 🏃 Run the Application
+✅ Done! Your `.env` file is now configured with all API keys.
 
-Start the chatbot UI using:
+🛑 **Important:** Do not upload `.env` to GitHub. Add it to your `.gitignore`:
 
 ```bash
+echo ".env" >> .gitignore
+```
+
+
+---
+
+## 🚀 Running the App
+
+```bash
+# Run the Streamlit app
 streamlit run app.py
 ```
 
+Then open your browser and go to:  
+[http://localhost:8502](http://localhost:8502)
+
 ---
+
+## 🧠 Project Overview
+
+- **Ingestion Agent**: Parses and chunks documents.
+- **Retrieval Agent**: Embeds and fetches relevant chunks.
+- **LLM Response Agent**: Uses retrieved context to generate accurate answers using an LLM.
+
+---
+
+## 📁 File Structure
+
+```
+Agentic-RAG-Chatbot/
+│
+├── agents/
+│   ├── ingestion_agent.py
+│   ├── retrieval_agent.py
+│   ├── llm_response_agent.py
+│   └── mcp.py
+│
+├── utils/
+│   ├── loaders.py
+│   └── text_splitter.py
+│
+├── .env
+├── app.py
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## 💡 Note
+
+Make sure your `.env` file is created and API keys are valid. If `venvlauncher.exe` error occurs during venv creation, ensure:
+- Python is added to PATH
+- Installed for all users
+
 
 ## 💬 How It Works
 
